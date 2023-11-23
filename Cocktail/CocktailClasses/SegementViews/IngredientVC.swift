@@ -17,7 +17,7 @@ class IngredientVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Received Data in IngredientVC :",dataSource)
+       
         //        ingredientsArray = convertIng(data: dataSource!)
         //        measuresArray = convertMeasures(data: dataSource!)
         //        IngredientTableView.dataSource = self
@@ -48,26 +48,6 @@ class IngredientVC: UIViewController {
             }
         }
         return measArr
-    }
-    
-}
-extension IngredientVC: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(ingredientsArray.count)
-        //        return ingredientsArray.count
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientTableViewCell", for: indexPath) as! IngredientTableViewCell
-        
-        //        print(ingredientsArray[indexPath.row])
-        //        print(measuresArray[indexPath.row])
-        //        cell.ingredientNameLbl.text = ingredientsArray[indexPath.row]
-        cell.ingredientNameLbl.text = "No Name"
-        //        cell.ingredientQuantityLbl.text = measuresArray[indexPath.row]
-        cell.ingredientQuantityLbl.text = "No Measure"
-        return cell
     }
     
 }

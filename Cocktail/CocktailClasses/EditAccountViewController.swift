@@ -14,9 +14,12 @@ class EditAccountViewController: UIViewController {
     @IBOutlet weak var editUserDataFld: UITextField!
     @IBOutlet weak var userInputTxtView: UITextView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gradientView()
+        
     }
     
     func gradientView(){

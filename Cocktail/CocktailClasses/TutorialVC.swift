@@ -10,7 +10,7 @@ import Photos
 import AVKit
 
 
-class TutorialVCV: UIViewController {
+class TutorialVC: UIViewController {
     
     @IBOutlet weak var videoTableView: UITableView!
     private var videoTableViewData = [AVPlayerItem]()
@@ -44,7 +44,7 @@ class TutorialVCV: UIViewController {
         videoTableView.reloadData()
     }
 }
-extension TutorialVCV: UITableViewDataSource{
+extension TutorialVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoTableViewData.count
@@ -62,14 +62,14 @@ extension TutorialVCV: UITableViewDataSource{
         return cell
     }
 }
-extension TutorialVCV: UITableViewDelegate{
+extension TutorialVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
 }
 
-extension TutorialVCV: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension TutorialVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let videoURL = info[.mediaURL] as? URL else {
             dismiss(animated: true, completion: nil)
